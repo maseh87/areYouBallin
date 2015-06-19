@@ -1,7 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $rootScope, $ionicPush, $ionicUser) {
+.controller('HomeCtrl', function($scope, $rootScope, $ionicPush, $ionicUser, $http) {
   // Nothing to see here.
+  $scope.callShopstyle = function() {
+    $http({
+      method: 'GET',
+      url: ''
+    }).then(function(result) {
+      console.log(result.data);
+    });
+  };
+
 })
 
 .controller('UserCtrl', function($scope, $rootScope, $ionicUser) {
